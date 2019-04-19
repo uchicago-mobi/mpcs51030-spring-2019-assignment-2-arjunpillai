@@ -1,0 +1,81 @@
+
+### Requirements
+
+Model and Data
+2/2 Custom class "Animal" that conforms to CustomStringConvertible
+0.5/0.5 Prints animal info to console via description property
+0.5/0.5 "Animals" array is shuffled when app is launched
+
+User Interface
+1/1 UIScrollView's contentSize is 3x wider than the screen with paging enabled
+2/2 3 UIButtons display animal names
+2/2 3 UIImageViews display animal images
+1/1 Uses for loop with varying x coordinate to populate UIButtons and UIImageViews
+
+Animal Name Button
+1/1 Uses button tag to identify correct animal object
+1/1 UIAlertController displays animal's name and age
+2/2 Animal sound plays
+
+Animal Species Label
+1/1 Label does not scroll with the rest of the screen
+2/2 Label changes animal name using UIScrollViewDelegate
+1/1 Label fades in and out using the alpha property
+
+Code Quality
+1.5/2 Best Practice
+1/1 Well-Formatted
+2/2 Clearly Written
+1/1 Concise
+
+Miscellaneous
+1/1 Compiles with no warnings or errors
+0.5/0.5 Custom icon
+0.5/0.5 List of sources
+
+### Comments
+
+Nice job with functionality, everything works as it should.
+
+Great work with code clarity. Your methods, variables, properties, classes, etc are all
+named very descriptively.
+
+You're close to perfect on formatting. Be careful of a few errant newlines hanging around.
+We should never have more than one blank newline grouped together.
+
+Best Practice:
+
+Your viewDidLoad method in ViewController.swift is performing multiple different tasks.
+This is a method where multiple tasks will happen, but we should split the code for those 
+tasks into helper methods. Here's an example of how we could make this code more 
+encapsulated and more readable:
+
+Task 1: populateAnimalsArray()
+Task 2: configureButtonsAndImageViews()
+
+Now, viewDidLoad looks like this:
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+ 
+    // some miscellaneous small-task code
+
+    populateAnimalsArray()
+    configureButtonsAndImageViews()
+}
+
+Much cleaner! Note that the names of these methods tell you exactly what they do. That
+indicates a method is well-named.
+
+A second method that could benefit from splitting its functionality into helpers is the
+buttonTapped method. How many distinct tasks is that method performing, and what would be
+good names for the helper methods you can create?
+
+Check out this post for more details on code quality grading, and lmk if you have any  
+questions.
+
+https://github.com/uchicago-mobi/MPCS51030-2019-Spring-Forum/issues/9
+
+### Score
+
+24.5/25
